@@ -50,6 +50,10 @@ const portfolioData = [
 export default function PortfolioSection() {
   const [hovered, setHovered] = useState(null);
 
+  const handleClickMobile = (index) => {
+    setHovered((prev) => (prev === index ? null : index));
+  };
+
   return (
     <section
       className="relative pt-36 pb-32 px-4 md:px-20 bg-[#f3f3f3] z-0 overflow-visible"
@@ -71,85 +75,25 @@ export default function PortfolioSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-8 mt-19">
           {portfolioData.map((item, index) => {
             const isHovered = hovered === index;
-            const isTopRow = index < 3;
 
             return (
               <div
                 key={item.id}
-                className="relative flex flex-col items-center min-h-[380px] group"
+                className="relative flex flex-col items-center group"
                 onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(null)}
+                onClick={() => handleClickMobile(index)}
               >
-                {/* Hover GIF on Desktop */}
-                <AnimatePresence>
-                  {isHovered && (
-                    <motion.div
-                      initial={{
-                        opacity: 0,
-                        y: isTopRow ? 60 : -60,
-                        scale: 0.92,
-                      }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                        scale: 1,
-                      }}
-                      exit={{
-                        opacity: 0,
-                        y: isTopRow ? 40 : -40,
-                        scale: 0.95,
-                      }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 12,
-                        delay: 0.05,
-                      }}
-                      className={`hidden md:flex absolute ${
-                        isTopRow
-                          ? "top-[calc(-300px+200px)] sm:-top-[140px]"
-                          : "top-[240px] sm:top-[260px]"
-                      } left-0 w-full z-[1] rounded-xl overflow-hidden shadow-lg bg-white justify-center items-center`}
-                      style={{
-                        height: "250px",
-                        maxHeight: "250px",
-                        padding: "8px",
-                      }}
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="max-w-full max-h-full object-contain rounded-md"
-                      />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                {/* Hover GIF on Mobile */}
-                <div className="md:hidden w-full mb-2">
-                  {isHovered && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 20 }}
-                      transition={{ duration: 0.3 }}
-                      className="rounded-xl overflow-hidden shadow-md bg-white p-2"
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-40 object-contain rounded"
-                      />
-                    </motion.div>
-                  )}
-                </div>
-
                 {/* Card */}
                 <motion.div
-                  animate={{ y: isHovered ? 55 : 0 }}
+                  animate={{ y: isHovered ? 10 : 0 }}
                   transition={{ type: "spring", stiffness: 100, damping: 12 }}
                   className={`relative z-10 p-6 rounded-2xl text-white text-center shadow-xl transition-all duration-300 w-full
-                    bg-[#9e69d2] group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-blue-400 hover:text-white`}
+                    bg-[#9e69d2] group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-blue-400 ${
+                      isHovered
+                        ? "bg-gradient-to-r from-purple-500 to-blue-400 text-white"
+                        : ""
+                    }`}
                   style={{ height: "250px" }}
                 >
                   {/* Top Left Icon */}
@@ -178,6 +122,25 @@ export default function PortfolioSection() {
                     {item.description}
                   </h6>
                 </motion.div>
+
+                {/* Inline GIF – below card, no overlap */}
+                <AnimatePresence>
+                  {isHovered && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-4 w-full h-[250px] rounded-xl overflow-hidden shadow-lg bg-white flex justify-center items-center"
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="max-w-full max-h-full object-contain rounded-md"
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             );
           })}

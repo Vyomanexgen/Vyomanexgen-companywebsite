@@ -1,0 +1,36 @@
+
+
+/* For screens ≤ 768px */
+@media (max-width: 800px) {
+  .puppy-gif {
+    width: 130px;
+    bottom: 10px;
+    right: -50x;
+    display:none;
+  }
+  .content {
+    font-size: 10px;
+  }
+}
+
+/* For screens ≤ 480px */
+@media (max-width: 490px) {
+  .puppy-gif {
+    width: 120px;
+    bottom: 76px;
+    right: 10px;
+    display:block;
+
+  }
+}
+
+/* For screens ≤ 380px */
+@media (max-width: 390px) {
+  .puppy-gif {
+    width: 90px;
+    bottom: 90px;
+    right: 0px;
+    display:block;
+    
+  }
+}

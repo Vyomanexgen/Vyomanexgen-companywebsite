@@ -1,0 +1,129 @@
+/* .phone-shadow {
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.25));
+} */
+
+.phone-shadow {
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.25));
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Add a subtle floating animation to the phone */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+/* Optional: Better looking text gradient */
+.text-gradient {
+  background-image: linear-gradient(to right, #f78e7c, #fadd82);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.phone-shadow {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+/* Group 15: Top decorative image */
+.group15-image {
+  /* Default for large screens - already positioned via Tailwind */
+}
+
+@media (max-width: 768px) {
+  .group15-image {
+    top: 260px;
+    right: auto;
+    left: 35%;
+    transform: translateX(-50%);
+    width: 270px;
+    z-index: 0;
+    opacity: 1;
+  }
+}
+
+/* Group 18: Bottom decorative image */
+.group18-image {
+  /* Default for large screens - already positioned via Tailwind */
+}
+
+@media (max-width: 768px) {
+  .group18-image {
+    bottom: 5%;
+    right: auto;
+    left: 420px;
+    transform: translateX(-70%);
+    width: 120px;
+    height: auto;
+    z-index: 0;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 490px) {
+  .group18-image {
+    bottom: 5%;
+    right: auto;
+    left: 320px;
+    transform: translateX(-70%);
+    width: 120px;
+    height: auto;
+    z-index: 0;
+    opacity: 1;
+  }
+  .group15-image {
+    top: 300px;
+    right: auto;
+    left: 29%;
+    transform: translateX(-50%);
+    width: 200px;
+    z-index: 0;
+    opacity: 1;
+  }
+  .contains{
+       font-size: 18px;
+  }
+
+}
+
+@media (max-width: 390px) {
+  .group18-image {
+    bottom: 1%;
+    right: auto;
+    left: 280px;
+    transform: translateX(-70%);
+    width: 120px;
+    height: auto;
+    z-index: 0;
+    opacity: 1;
+  }
+  .group15-image {
+    top: 360px;
+    right: auto;
+    left: 29%;
+    transform: translateX(-50%);
+    width: 180px;
+    z-index: 0;
+    opacity: 1;
+  }
+  .contains{
+       font-size: 13px;
+       
+  }
+.demo{
+  font-size: 18px;
+}
+}
+
+/* OPTIONAL: Fix overflow cropping on mobile */
+@media (max-width: 768px) {
+  .phone-shadow {
+    max-width: 16rem; /* Shrink on mobile */
+  }
+}

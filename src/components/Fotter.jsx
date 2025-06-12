@@ -2,7 +2,7 @@ import React from "react";
 
 export default function App() {
   return (
-    <div className="bg-gray-100 py-10 px-4">
+    <div className="bg-gray-100 py-10 px-4" id="Footer">
   <div className="bg-white w-[90%] max-w-[1440px] mx-auto p-10 rounded-3xl shadow-2xl">
     <div className="flex justify-center mb-6">
         <img
@@ -39,19 +39,13 @@ export default function App() {
       <img src="images/phone.png" alt="phone" className="w-5 h-5" />
       +91 8985505293
     </p>
-    <p className="text-gray-800 text-sm flex items-center gap-2">
-      <img src="images/map.png" alt="location" className="w-5 h-5" />
-      123 Digital Avenue Tech City, TC 12345
-    </p>
+   
   </div>
 
   {/* Social Section */}
   <div className="flex flex-col gap-2 min-w-[250px]">
     <h3 className="text-lg font-semibold mb-2">More about us</h3>
-    <p className="text-gray-800 text-sm flex items-center gap-2">
-      <img src="images/github.png" alt="github" className="w-5 h-5" />
-      github.com/Vyomanexgen/
-    </p>
+   
     <p className="text-gray-800 text-sm flex items-center gap-2">
       <img src="images/images.png" alt="x" className="w-5 h-5" />
       x.com/Vyomanexgen

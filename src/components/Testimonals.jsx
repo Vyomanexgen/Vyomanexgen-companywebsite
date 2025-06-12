@@ -22,7 +22,7 @@ export default function Testimonials() {
             <div className="absolute top-0 right-0 w-20 h-20 bg-purple-100 opacity-50 rounded-full translate-x-1/3 -translate-y-1/3"></div>
 
             <div className="flex items-center gap-3 mb-4">
-              <img src="/public/images/Home.jpg" alt="Michael Chen" className="w-11 h-11 rounded-full" />
+              <img src="/images/Home.jpg" alt="Michael Chen" className="w-11 h-11 rounded-full" />
               <div>
                 <h4 className="font-semibold">A.Veera Ragavan</h4>
                 <p className="text-sm italic text-gray-600">Director,Muhi</p>

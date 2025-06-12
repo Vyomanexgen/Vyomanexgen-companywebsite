@@ -29,7 +29,7 @@ export default function Testimonials() {
               </div>
             </div>
             <p className="text-sm mb-2">
-              "The website beautifully reflects our company’s vision, values, and commitment to excellence. It showcases our services with clarity, professionalism, and a strong sense of purpose.
+              "The website beautifully reflects our company’s vision, values, and commitment to excellence. 
 "
             </p>
             <p className="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</p>
@@ -41,7 +41,7 @@ export default function Testimonials() {
             <div className="absolute top-0 right-0 w-20 h-20 bg-gray-300 opacity-30 rounded-full translate-x-1/3 -translate-y-1/3"></div>
 
             <div className="flex items-center gap-3 mb-4">
-              <img src="/images/emily.jpg" alt="Emily Rodriguez" className="w-10 h-10 rounded-full" />
+              <img src="/images/emily.png" alt="Emily Rodriguez" className="w-10 h-10 rounded-full" />
               <div>
                 <h4 className="font-semibold">Emily Rodriguez</h4>
                 <p className="text-sm italic text-gray-600">Marketing Director, GrowthCo</p>
@@ -49,7 +49,6 @@ export default function Testimonials() {
             </div>
             <p className="text-sm mb-2">
               "Working with Vyoma was a game-changer for our startup. They delivered a beautiful, functional mobile app
-              that our users love. Working with Vyoma was a game-changer for our startup. They delivered a beautiful, functional mobile app
               that our users love."
             </p>
             <p className="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</p>
@@ -62,7 +61,7 @@ export default function Testimonials() {
   <div className="absolute bottom-0 right-0 w-20 h-20 bg-orange-100 opacity-50 rounded-full translate-x-1/3 translate-y-1/3"></div>
 
   <div className="flex items-center gap-3 mb-4">
-    <img src="/images/david.jpg" alt="David Thompson" className="w-10 h-10 rounded-full" />
+    <img src="/images/david.png" alt="David Thompson" className="w-10 h-10 rounded-full" />
     <div>
       <h4 className="font-semibold">David Thompson</h4>
       <p className="text-sm italic text-gray-600">CTO, DataFlow Systems</p>
@@ -70,8 +69,7 @@ export default function Testimonials() {
   </div>
   <p className="text-sm mb-2">
     "Working with Vyoma was a game-changer for our startup. They delivered a beautiful, functional mobile app
-    that our users love.Working with Vyoma was a game-changer for our startup. They delivered a beautiful, functional mobile app
-              that our users love."
+    that our users love."
   </p>
   <p className="text-yellow-500 text-lg">⭐⭐⭐⭐⭐</p>
 </div>

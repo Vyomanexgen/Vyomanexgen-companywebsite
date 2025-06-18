@@ -99,7 +99,7 @@ const Contact = () => {
                   name={fieldName}
                   id={fieldName}
                   className="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 focus:outline-none sm:text-sm"
-                  placeholder={fieldName === 'fullName' ? 'Rehman' : 'rehman@gmail.com'}
+                  placeholder={fieldName === 'fullName' ? 'Name' : 'Name@gmail.com'}
                   value={formData[fieldName]}
                   onChange={handleChange}
                 />
@@ -133,7 +133,7 @@ const Contact = () => {
                   name="phone"
                   id="phone"
                   className="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 focus:outline-none sm:text-sm"
-                  placeholder="9213456780"
+                  placeholder="your number"
                   value={formData.phone}
                   onChange={handleChange}
                 />
@@ -149,7 +149,7 @@ const Contact = () => {
                 id="message"
                 rows="4"
                 className="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 focus:outline-none sm:text-sm"
-                placeholder="Hi, My name is Rehman..."
+                placeholder="Enter the Text..."
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>

@@ -202,7 +202,7 @@ const Contact = () => {
           </motion.div>
 
           <img
-            src='/public/images/ba33deedeec1010e9dc4d8a59e1bd2261-ezgif.com-crop (1).gif'
+            src='/images/ba33deedeec1010e9dc4d8a59e1bd2261-ezgif.com-crop (1).gif'
             alt="Cute Character"
             className="absolute z-0 object-contain w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] lg:w-[150px] lg:h-[150px] transform -translate-y-1/2 hidden sm:block sm:right-[60px] lg:right-[53px]"
             style={{ top: '60%' }}

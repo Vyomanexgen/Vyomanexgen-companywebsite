@@ -31,7 +31,7 @@ const cards = [
     id: 3,
     title: "Billing Software",
     text: "Billing software is a type of business application used to automate and streamline the process of creating, managing, and tracking invoices, bills, and other financial documents",
-    leftIcon: "/images/4166116.png",
+    leftIcon: "/public/images/Billing image.png",
     rightIcon: "/images/318456-removebg-preview.png",
     gif: "/images/9413885.jpg",
   },
@@ -49,10 +49,10 @@ export default function ServicesWaveSection() {
       <ServiceHeading />
 
       <div className="relative max-w-7xl mx-auto bg-white rounded-3xl shadow-lg px-6 sm:px-14 py-16 z-10">
-        <p className="text-lg sm:text-xl md:text-2xl text-center text-gray-800 font-medium mb-14 leading-relaxed">
-          We offer comprehensive digital solutions designed to transform your business <br />
-          and elevate your online presence to new heights.
-        </p>
+       <p className="text-justify text-lg sm:text-xl md:text-2xl text-gray-800 font-medium mb-14 leading-relaxed max-w-3xl mx-auto px-4 sm:px-0">
+  We offer comprehensive digital solutions designed to transform your business and elevate your online presence to new heights.
+</p>
+
 
         <div className="flex flex-col md:flex-row flex-wrap justify-center items-stretch gap-8">
           {cards.map((card, index) => {
@@ -66,7 +66,8 @@ export default function ServicesWaveSection() {
                   index === 1 ? "z-10 from-[#c084fc] to-[#5eead4]" : ""
                 }`}
                 onClick={() => toggleCard(card.id)}
-                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.15 }} // reduce animation delay
               >
                 {index === 1 && (
                   <div className="absolute top-3 right-3 z-20">
@@ -83,7 +84,7 @@ export default function ServicesWaveSection() {
                       <img
                         src={card.leftIcon}
                         alt="left icon"
-                        className="w-10 h-10 sm:w-12 sm:h-12"
+                        className="w-12 h-12 sm:w-12 sm:h-12"
                       />
                     </div>
                     <div className="absolute right-4 top-4">
@@ -124,4 +125,3 @@ export default function ServicesWaveSection() {
     </section>
   );
 }
-

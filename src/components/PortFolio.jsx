@@ -50,10 +50,6 @@ const portfolioData = [
 export default function PortfolioSection() {
   const [hovered, setHovered] = useState(null);
 
-  const handleClickMobile = (index) => {
-    setHovered((prev) => (prev === index ? null : index));
-  };
-
   return (
     <section
       className="relative pt-36 pb-32 px-4 md:px-20 bg-[#f3f3f3] z-0 overflow-visible"
@@ -82,7 +78,6 @@ export default function PortfolioSection() {
                 className="relative flex flex-col items-center group"
                 onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(null)}
-                onClick={() => handleClickMobile(index)}
               >
                 {/* Card */}
                 <motion.div
@@ -90,10 +85,8 @@ export default function PortfolioSection() {
                   transition={{ type: "spring", stiffness: 100, damping: 12 }}
                   className={`relative z-10 p-6 rounded-2xl text-white text-center shadow-xl transition-all duration-300 w-full
                     bg-[#9e69d2] group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-blue-400 ${
-                      isHovered
-                        ? "bg-gradient-to-r from-purple-500 to-blue-400 text-white"
-                        : ""
-                    }`}
+                    isHovered ? "bg-gradient-to-r from-purple-500 to-blue-400 text-white" : ""
+                  }`}
                   style={{ height: "250px" }}
                 >
                   {/* Top Left Icon */}
@@ -116,14 +109,16 @@ export default function PortfolioSection() {
 
                   {/* Title & Description */}
                   <div className="flex items-center justify-start gap-4 mt-10 mr-10">
-                    <h1 className="text-2xl font-bold whitespace-nowrap">{item.title}</h1>
+                    <h1 className="text-2xl font-bold whitespace-nowrap">
+                      {item.title}
+                    </h1>
                   </div>
                   <h6 className="text-sm text-gray-100 mt-4 mr-20">
                     {item.description}
                   </h6>
                 </motion.div>
 
-                {/* Inline GIF – below card, no overlap */}
+                {/* GIF below card, keeps hover state */}
                 <AnimatePresence>
                   {isHovered && (
                     <motion.div

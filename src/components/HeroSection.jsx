@@ -25,6 +25,14 @@ function HeroSection() {
     }
   }, [inView]);
 
+  // Scroll to contact section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("Contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -32,9 +40,9 @@ function HeroSection() {
       className="w-full overflow-hidden font-sans mt-[98px] md:mt-[115px]"
     >
       <div className="relative mx-4 md:mx-20 p-0.5 rounded-[2.5rem] bg-white shadow-2xl">
-<div className="relative rounded-[2.5rem] bg-[#7038f3] text-white p-6 md:p-16 flex flex-col md:flex-row items-center justify-between overflow-visible">
+        <div className="relative rounded-[2.5rem] bg-[#7038f3] text-white p-6 md:p-16 flex flex-col md:flex-row items-center justify-between overflow-visible">
 
-          {/* === Static Background Images === */}
+          {/* === Background Decorations === */}
           <img
             src="/images/Group 15.png"
             alt="bg1"
@@ -60,7 +68,7 @@ function HeroSection() {
             </p>
             <p className="mt-8 text-2xl font-bold text-white demo">Elevate your digital presence with</p>
             <div className="text-2xl font-extrabold text-white flex items-center gap-2 contains">
-              Cutting-edge{" "}  
+              Cutting-edge{" "}
               <span className="h-10 overflow-hidden inline-block align-middle">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -92,11 +100,11 @@ function HeroSection() {
               transition={{ duration: 1, delay: 0.2 }}
               className="absolute inset-0 w-full h-full flex items-center justify-center z-0"
             >
-              
+              {/* Optional inner background animation or element */}
             </motion.div>
 
             <img
-              src="/images/Group_5-removebg-preview.png"
+              src="/public/images/phoneimage.png"
               alt="Mobile UI"
               className="relative z-10 w-80 md:w-172 max-h-[580px] mt-[120px] object-contain drop-shadow-6xl"
             />
@@ -104,17 +112,19 @@ function HeroSection() {
         </div>
 
         {/* === CTA BUTTON === */}
-       <motion.div
-  initial={{ y: 100, opacity: 0 }}
-  animate={inView ? { y: 0, opacity: 1 } : {}}
-  transition={{ duration: 1, type: "spring", stiffness: 50 }}
-  className="flex justify-start px-6 md:px-20 mt-8 mb-6"
->
-  <button className="px-8 py-4 bg-gradient-to-r from-[#6E38F3] to-[#8659f2] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 text-lg">
-    <span>Get Started</span>
-  </button>
-</motion.div>
-
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={inView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 1, type: "spring", stiffness: 50 }}
+          className="flex justify-start px-6 md:px-20 mt-8 mb-6"
+        >
+          <button
+            onClick={scrollToContact}
+            className="px-8 py-4 bg-gradient-to-r from-[#6E38F3] to-[#8659f2] text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 text-lg"
+          >
+            <span>Get Started</span>
+          </button>
+        </motion.div>
       </div>
     </section>
   );

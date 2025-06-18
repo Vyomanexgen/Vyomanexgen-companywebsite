@@ -6,7 +6,7 @@ export default function App() {
   <div className="bg-white w-[90%] max-w-[1440px] mx-auto p-10 rounded-3xl shadow-2xl">
     <div className="flex justify-center mb-6">
         <img
-          src="/images/logo-Picsart-AiImageEnhancer.png" // <-- change this path to your image file
+          src="/images/vyomanexgenlogo.png" // <-- change this path to your image file
           alt="Vyomanexgen Logo"
           className="w-25 h-auto"
         />
@@ -37,7 +37,7 @@ export default function App() {
     </p>
     <p className="text-gray-800 text-sm flex items-center gap-2">
       <img src="images/phone.png" alt="phone" className="w-5 h-5" />
-      +91 8985505293
+      +91 7358105293
     </p>
    
   </div>

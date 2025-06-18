@@ -47,7 +47,8 @@
 
 .highlight-main {
   color: #9e69d2;
-  font-weight: 700;
+  font-weight: 900;
+   font-size: clamp(20px, 2.5vw, 2rem);
 }
 
 .description {
@@ -56,6 +57,15 @@
   margin: 0 auto;
   max-width: 800px;
   line-height: 1.6;
+  
+  text-align: justify;
+  text-justify: inter-word; /* Ensures even spacing between words */
+  margin-top: 20px;
+  margin-bottom: 40px;
+ 
+  
+
+
 }
 
 .carousel {
@@ -238,4 +248,5 @@
     transform: rotate(360deg);
   }
 }
+
 

@@ -48,11 +48,11 @@ function About() {
      <div className="stats-wrapper">
   <div className="stats">
     <div className="stat">
-      <h2>5+ Years</h2>
+      <h2>2+ Years</h2>
       <p>Industry Experience</p>
     </div>
     <div className="stat">
-      <h2>50+ Projects</h2>
+      <h2>10+ Projects</h2>
       <p>Successfully Delivered</p>
     </div>
     <div className="stat">

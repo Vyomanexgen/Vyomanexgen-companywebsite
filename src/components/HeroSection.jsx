@@ -109,7 +109,7 @@ const scrollToContact = () => {
             </motion.div>
 
             <img
-              src="/public/images/phoneimage - Copy.png"
+              src="/images/phoneimage.png"
               alt="Mobile UI"
               className="relative z-10 w-80 md:w-172 max-h-[580px] mt-[120px] object-contain drop-shadow-6xl"
             />

@@ -31,7 +31,7 @@ const cards = [
     id: 3,
     title: "Billing Software",
     text: "Billing software is a type of business application used to automate and streamline the process of creating, managing, and tracking invoices, bills, and other financial documents",
-    leftIcon: "/public/images/Billing image.png",
+    leftIcon: "/public/images/billing.png",
     rightIcon: "/images/318456-removebg-preview.png",
     gif: "/images/9413885.jpg",
   },

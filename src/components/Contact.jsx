@@ -81,7 +81,7 @@ const Contact = () => {
   const line7 = "momentum";
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div id='Contact' className="min-h-screen bg-white flex items-center justify-center p-4 sm:p-6 lg:p-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between w-full">
       
         {/* Form Section */}

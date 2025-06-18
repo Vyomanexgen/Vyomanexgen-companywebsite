@@ -26,12 +26,17 @@ function HeroSection() {
   }, [inView]);
 
   // Scroll to contact section
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("Contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+const scrollToContact = () => {
+  const contactSection = document.getElementById("Contact");
+  if (contactSection) {
+    const yOffset = -80; // adjust as needed for your header height
+    const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+};
+
+
 
   return (
     <section
@@ -104,7 +109,7 @@ function HeroSection() {
             </motion.div>
 
             <img
-              src="/public/images/phoneimage.png"
+              src="/public/images/phoneimage - Copy.png"
               alt="Mobile UI"
               className="relative z-10 w-80 md:w-172 max-h-[580px] mt-[120px] object-contain drop-shadow-6xl"
             />

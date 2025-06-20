@@ -357,36 +357,53 @@ const Contact = () => {
   };
 
   const sendEmail = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus({ error: false, message: '' });
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus({ error: false, message: '' });
 
-    const templateParams = {
-        ...formData,
-        timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
-    };
+  const { user_name, user_email, user_phone, message } = formData;
 
-    //  emailjs.sendForm(
-//       'service_nzz4dqu',       // <-- replace this 'template_pqc0vc7', formRef.current, 'He_1j-g1lwbuF7wHb'
-//       'template_pqc0vc7',      // <-- replace this
-//       formRef.current,
-//       'He_1j-g1lwbuF7wHb'       // <-- replace this
-//     )
+  // Trim check
+  if (!user_name.trim() || !user_email.trim() || !user_phone.trim() || !message.trim()) {
+    setSubmitStatus({ error: true, message: 'Please fill out all the fields.' });
+    setIsSubmitting(false);
+    return;
+  }
 
-    emailjs
-      .send('service_nzz4dqu', 'template_pqc0vc7', templateParams, 'He_1j-g1lwbuF7wHb')
-      .then(
-        () => {
-          setShowSuccessView(true);
-        },
-        () => {
-          setSubmitStatus({ error: true, message: 'Failed to send. Please try again.' });
-        }
-      )
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+  // Email format check
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(user_email)) {
+    setSubmitStatus({ error: true, message: 'Please enter a valid email address.' });
+    setIsSubmitting(false);
+    return;
+  }
+
+  // Phone number length and digit check (10 digits only)
+  const phoneRegex = /^\d{10}$/;
+  if (!phoneRegex.test(user_phone)) {
+    setSubmitStatus({ error: true, message: 'Phone number must be exactly 10 digits.' });
+    setIsSubmitting(false);
+    return;
+  }
+
+  const templateParams = {
+    ...formData,
+    timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
   };
+
+  emailjs
+    .send('service_nzz4dqu', 'template_pqc0vc7', templateParams, 'He_1j-g1lwbuF7wHb')
+    .then(() => {
+      setShowSuccessView(true);
+    })
+    .catch(() => {
+      setSubmitStatus({ error: true, message: 'Failed to send. Please try again.' });
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
+};
+
   
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -445,7 +462,7 @@ const Contact = () => {
                   <p className="text-gray-600 mt-2">Thank you for reaching out. We'll get back to you soon.</p>
                   
                 <p className="text-gray-500 mt-6 text-sm animate-pulse">The form will reset automatically...</p>
-                <p className="text-gray-500 mt-6 text-sm animate-pulse">The form will reset automatically in 1000 seconds.</p>
+                
 <button
   onClick={() => {
     setShowSuccessView(false);

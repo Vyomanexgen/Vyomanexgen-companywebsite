@@ -94,7 +94,7 @@
 }
 @media (max-width: 510px){
  .demo{
-  margin-left: 20px;
+  margin-left: 23px;
  }
   .mome{
     margin-left: 28px;
@@ -109,7 +109,8 @@
   }
   .demo {
    
-   font-size: 30px
+   font-size: 30px;
+    margin-right: -2px;
   }
   .puppy{
     margin-left: 13px;
@@ -119,7 +120,7 @@
     
   }
   .design{
-    margin-left: -39px;
+    margin-left: -50px;
   }
   .momentum {
     margin-left: -1px;

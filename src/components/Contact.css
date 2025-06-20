@@ -1,16 +1,127 @@
 .typing-text {
   display: inline-block;
-  white-space: nowrap;
   overflow: hidden;
-  animation: typing 2s steps(30, end), blink 0.6s step-end infinite alternate;
-  border-right: 2px solid;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  animation: typing 2s steps(25, end), blink 0.8s step-end infinite;
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink {
-  50% { border-color: transparent }
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media (min-width: 510px) and (max-width: 800px) {
+  .typing-text {
+    font-size: 22px;
+    padding: 8px;
+  }
+  .demo {
+    font-size: 38px;
+    margin-left: 60px;
+  }
+  .puppy {
+    margin-left: 25px;
+    margin-top: -20px;
+    
+  }
+  .mome {
+    margin-left: 10px;
+  }
+  .design {
+    margin-left: -30px;
+  }
+  .momentum {
+    margin-left: 5px;
+  }
+}
+
+@media (min-width: 510px) and (max-width: 639px) {
+  .typing-text {
+    font-size: 18px;
+    padding: 6px;
+  }
+  .demo {
+    font-size: 32px;
+    margin-left: 46px;
+  }
+  .puppy {
+    margin-left: 18px;
+    margin-top: -12px;
+  }
+  .mome {
+    margin-left: 8px;
+  }
+  .design {
+    margin-left: -18px;
+  }
+  .momentum {
+    margin-left: 2px;
+  }
+}
+@media (min-width: 801px) and (max-width: 1020px) {
+  .typing-text {
+    font-size: 26px;
+    padding: 10px;
+  }
+  .demo {
+    font-size: 44px;
+    margin-left: 60px;
+  }
+  .puppy {
+    margin-left: 10px;
+    margin-top: -15px;
+  }
+  .mome {
+    margin-left: 18px;
+  }
+  .design {
+    margin-left: -20px;
+  }
+  .momentum {
+    margin-left: 12px;
+  }
+}
+@media (max-width: 510px){
+ .demo{
+  margin-left: 20px;
+ }
+  .mome{
+    margin-left: 28px;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .typing-text {
+    font-size: 16px;
+    padding: 4px;
+  }
+  .demo {
+   
+   font-size: 30px
+  }
+  .puppy{
+    margin-left: 13px;
+  }
+  .mome{
+    margin-left: -39px;
+    
+  }
+  .design{
+    margin-left: -39px;
+  }
+  .momentum {
+    margin-left: -1px;
+  }
 }

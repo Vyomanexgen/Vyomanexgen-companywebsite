@@ -26,17 +26,20 @@ function HeroSection() {
   }, [inView]);
 
   // Scroll to contact section
-const scrollToContact = () => {
-  const contactSection = document.getElementById("Contact");
-  if (contactSection) {
-    const yOffset = -80; // adjust as needed for your header height
-    const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  const scrollToContact = (e) => {
+    e.preventDefault(); // Prevent any default behavior
+    const contactSection = document.getElementById("Contact");
+    if (contactSection) {
+      const navbar = document.querySelector("nav");
+      const navbarHeight = navbar ? navbar.offsetHeight : 80; // Fallback to 80px
+      const yOffset = -navbarHeight; // Dynamic offset based on navbar height
+      const y = contactSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-    window.scrollTo({ top: y, behavior: "smooth" });
-  }
-};
-
-
+      window.scrollTo({ top: y, behavior: "smooth" });
+    } else {
+      console.warn("Contact section not found. Ensure the section has id='Contact'.");
+    }
+  };
 
   return (
     <section
@@ -46,7 +49,6 @@ const scrollToContact = () => {
     >
       <div className="relative mx-4 md:mx-20 p-0.5 rounded-[2.5rem] bg-white shadow-2xl">
         <div className="relative rounded-[2.5rem] bg-[#7038f3] text-white p-6 md:p-16 flex flex-col md:flex-row items-center justify-between overflow-visible">
-
           {/* === Background Decorations === */}
           <img
             src="/images/Group 15.png"
@@ -104,10 +106,7 @@ const scrollToContact = () => {
               animate={inView ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
               className="absolute inset-0 w-full h-full flex items-center justify-center z-0"
-            >
-              {/* Optional inner background animation or element */}
-            </motion.div>
-
+            />
             <img
               src="/images/phoneimage.png"
               alt="Mobile UI"

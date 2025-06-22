@@ -117,12 +117,14 @@
   }
   .mome{
     margin-left: -39px;
+ 
     
   }
   .design{
-    margin-left: -50px;
+    margin-left: -46px;
   }
   .momentum {
     margin-left: -1px;
+    transform: translate(9px);
   }
 }

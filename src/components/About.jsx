@@ -1,6 +1,6 @@
-/** App.js **/
+
 import React from 'react';
-import './About.css'; // Assuming you have a CSS file for styles
+import './About.css'; 
 
 function About() {
   return (

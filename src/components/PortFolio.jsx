@@ -79,7 +79,7 @@ export default function PortfolioSection() {
                 onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(null)}
               >
-                {/* Card */}
+               
                 <motion.div
                   animate={{ y: isHovered ? 10 : 0 }}
                   transition={{ type: "spring", stiffness: 100, damping: 12 }}
@@ -89,7 +89,7 @@ export default function PortfolioSection() {
                   }`}
                   style={{ height: "250px" }}
                 >
-                  {/* Top Left Icon */}
+                 
                   <div className="absolute top-4 left-4 w-8 h-8">
                     <img
                       src={item.icon}
@@ -98,7 +98,7 @@ export default function PortfolioSection() {
                     />
                   </div>
 
-                  {/* Top Right Cursor */}
+                 
                   <div className="absolute top-4 right-4 w-8 h-8">
                     <img
                       src="/images/Arrow.png"
@@ -107,7 +107,7 @@ export default function PortfolioSection() {
                     />
                   </div>
 
-                  {/* Title & Description */}
+                  
                   <div className="flex items-center justify-start gap-4 mt-10 mr-10">
                     <h1 className="text-2xl font-bold whitespace-nowrap">
                       {item.title}
@@ -118,7 +118,7 @@ export default function PortfolioSection() {
                   </h6>
                 </motion.div>
 
-                {/* GIF below card, keeps hover state */}
+                
                 <AnimatePresence>
                   {isHovered && (
                     <motion.div
